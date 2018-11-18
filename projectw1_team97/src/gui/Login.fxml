@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<SplitPane dividerPositions="0.5860805860805861" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="275.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+         <children>
+            <Label layoutX="68.0" layoutY="62.0" text="UNIPASS: Password Viewer">
+               <font>
+                  <Font name="Roboto Regular" size="29.0" />
+               </font>
+            </Label>
+            <Label layoutX="153.0" layoutY="103.0" text="Secure Password Encryption Storage" />
+            <Label layoutX="15.0" layoutY="6.0" text="Lian Duan - CPSC 210 - projectw1_team97 - 2018" textFill="#9e9e9e">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="15.0" layoutY="23.0" text="DEMO VERSION">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+         </children></AnchorPane>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+         <children>
+            <JFXPasswordField layoutX="144.0" layoutY="30.0" prefHeight="25.0" prefWidth="155.0" promptText="Please Enter Password here" />
+            <JFXButton layoutX="299.0" layoutY="30.0" mnemonicParsing="false" text="Submit" />
+         </children></AnchorPane>
+  </items>
+</SplitPane>
