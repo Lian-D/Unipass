@@ -1,6 +1,6 @@
 # Unipass
-A simple password manager that encrypts passwords for you and provides the information after you provide a password
-Reliance on following libraries
-- jfoenix
-- gson
+A password manager that uses PBE string encryption libraries to locally store encrypted passwords on your computer. Allowing only the person who is running the program with the correct key to decrypt user data
+
+# Libraries
+- Jfoenix
 - JASYPT
