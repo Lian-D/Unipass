@@ -10,6 +10,7 @@ import java.util.*;
 import accountType.Account;
 
 public class FileReader {
+    
     //REQUIRES: Nothing
     //MODIFIES: SaveData.txt
     //EFFECTS: Reads the file and creates the account objects from the file
@@ -19,11 +20,6 @@ public class FileReader {
         List<String> lines = Files.readAllLines(Paths.get("savedata.txt"));
         PrintWriter writer = new PrintWriter("savedata.txt", "UTF-8");
         Encryption encryptor = new Encryption("GenerateCodeHere");
-//
-//        lines.add("Google " + encryptor.encrypt("Username1") + " " + encryptor.encrypt("Password1"));
-//        lines.add("Snapchat " + encryptor.encrypt("Username2") + " " + encryptor.encrypt("Password2"));
-//        lines.add("Facebook " + encryptor.encrypt("Username3") + " " + encryptor.encrypt("Password3"));
-//        lines.add("Instagram " + encryptor.encrypt("Username4") + " " + encryptor.encrypt("Password4"));
 
         for (String line : lines) {
             ArrayList<String> partsOfLine = splitOnSpace(line);
@@ -37,19 +33,23 @@ public class FileReader {
         writer.close();
         return AccountsData;
     }
+    
     //REQUIRES: Nothing
     //MODIFIES: SaveData.txt
     //EFFECTS: Reads the file and adds the account objects from the file
     public static void addnewaccountdata(Account acc) throws  IOException {
-        while (true) {
-            List<String> lines = Files.readAllLines(Paths.get("savedata.txt"));
-            PrintWriter writer = new PrintWriter("savedata.txt", "UTF-8");
-            Encryption encryptor = new Encryption("GenerateCodeHere");
+        System.out.println("Storing Account Data");
+        List<String> lines = Files.readAllLines(Paths.get("savedata.txt"));
+        PrintWriter writer = new PrintWriter("savedata.txt", "UTF-8");
+        Encryption encryptor = new Encryption("GenerateCodeHere");
 
-            String storedata = acc.getHost() + " " + encryptor.encrypt(acc.getUser()) + " " + encryptor.encrypt(acc.getPass());
-            lines.add(storedata);
-            writer.close();
+        lines.add(acc.getHost() + " " + encryptor.encrypt(acc.getUser()) + " " + encryptor.encrypt(acc.getPass()));
+
+        for (String line : lines) {
+            ArrayList<String> partsOfLine = splitOnSpace(line);
+            writer.println(line);
         }
+        writer.close();
     }
 
     public static ArrayList<String> splitOnSpace(String line) {

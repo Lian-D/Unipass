@@ -1,11 +1,15 @@
 package gui;
 
+import accountType.Account;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import model.FileReader;
+
+import java.io.File;
 
 public class Main extends Application {
 
@@ -15,7 +19,6 @@ public class Main extends Application {
         StackPane pane = new StackPane();
         primaryStage.setTitle("UNIPASS: password storage");
         primaryStage.setScene(new Scene(root, 500, 275));
-
         primaryStage.show();
 
     }
